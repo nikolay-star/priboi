@@ -122,6 +122,11 @@ body {
   max-width: calc(100% - 98px - 30px);
   overflow-x: auto;
 }
+@media (max-width: 999px) {
+  .nav {
+    max-width: 100%;
+  }
+}
 .nav__link {
   color: #FFFFFF;
   font-size: 15px;
