@@ -1,0 +1,592 @@
+
+@import "_clear";
+
+// FONTS
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800');
+//@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&subset=cyrillic');
+
+.roboto{
+	font-family: 'Roboto', sans-serif;
+}
+
+body{
+	min-width: 320px;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 400;
+}
+
+// mixins
+
+@mobile: ~"(max-width: 768px)";
+@tablet: ~"(max-width: 1210px)";
+
+.container{
+	margin: 0 auto;
+	max-width: 1190px;
+	padding: 0 5px;
+	
+	@media @tablet{
+		max-width: 100%;
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+	
+	@media @mobile{
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+}
+
+.flex-row{
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+
+.placeholder(@color: #ccc) {
+	::-webkit-input-placeholder {color:@color;}
+	::-moz-placeholder          {color:@color;}
+	:-moz-placeholder           {color:@color;}
+	:-ms-input-placeholder      {color:@color;}
+}
+
+body{
+	position: relative;
+}
+
+.header{
+	position: absolute;
+	padding-top: 33px;
+	left: 0;
+	top: 0;
+	width: 100%;
+	max-width: 100%;
+	overflow: hidden;
+	
+	&__container{
+		.container();
+		.flex-row();
+		flex-wrap: nowrap;
+	}
+}
+
+.logo{
+	margin-right: 30px;
+	flex: 98px 0 0;
+	width: 98px;
+	
+	&__img{
+		display: block;
+		width: 100%;
+	}
+}
+
+.nav{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	max-width: ~"calc(100% - 98px - 30px)";
+	overflow-x: auto;
+	
+	&__link{
+		color: #FFFFFF;
+		font-size: 15px;
+		font-weight: 500;
+		line-height: 1em;
+		white-space: nowrap;
+		padding: 10px 20px 10px 0;
+		
+		&:hover,
+		&:active{
+			color: #FFF301;
+		}
+	}
+}
+
+.main{
+	max-width: 100%;
+	overflow: hidden;
+}
+
+.cta-screen{
+	background: url("../images/bg.png") no-repeat top center;
+	min-height: 911px;
+	
+	&__container{
+		.container();
+		
+		padding-top: 268px;
+	}
+	
+	&__title{
+		font-weight: bold;
+		font-size: 45px;
+		line-height: 55px;
+		color: #FFFFFF;
+		margin-bottom: 20px;
+	}
+	
+	&__sale{
+		font-weight: bold;
+		font-size: 25px;
+		line-height: 1em;
+		
+		color: #FFF301;
+		padding: 20px;
+		margin-bottom: 20px;
+	}
+	
+	&__btn{
+		line-height: 60px;
+		left: 127px;
+		top: 429px;
+		display: inline-block;
+		
+		background: #FF0000;
+		border-radius: 30px;
+		width: 278px;
+		text-align: center;
+		
+		font-weight: bold;
+		font-size: 20px;
+		
+		color: #FFFFFF;
+		transition: all ease 0.2s;
+		
+		&:hover{
+			background: #fff;
+			color: #ff0000;
+		}
+	}
+}
+
+.advantages{
+	padding-top: 100px;
+	text-align: center;
+	
+	&__container{
+		.container();
+	}
+	
+	&__title{
+		margin-bottom: 40px;
+		font-weight: 500;
+		font-size: 24px;
+		line-height: 41px;
+		text-align: center;
+		
+		color: #015A62;
+	}
+	
+	&__list{
+		.flex-row();
+		justify-content: space-between;
+		flex-wrap: wrap;
+		align-items: flex-start;
+	}
+	
+	&__item{
+		padding: 0 10px;
+		margin-bottom: 100px;
+	}
+	
+	&__icon{
+		width: 108px;
+		height: 88px;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-end;
+		margin: 0 auto 30px;
+		
+		img{
+			max-width: 100%;
+			max-height: 100%;
+		}
+	}
+	
+	&__text{
+		font-weight: 500;
+		font-size: 16px;
+		line-height: 1.5em;
+		color: #015A62;
+	}
+}
+
+.description{
+	background: url("../images/bg-wave.png") no-repeat top center / cover;
+	margin-top: -40px;
+	
+	&__container{
+		.container();
+		position: relative;
+		height: 879px;
+		text-align: center;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: center;
+		
+		&:before{
+			position: absolute;
+			content: url("../images/advantages-main.svg");
+			width: 298px;
+			transform: translateX(-4%);
+		}
+	}
+	
+	&__item{
+		position: absolute;
+		display: flex;
+		align-items: center;
+		
+		&_1{
+			flex-direction: column-reverse;
+			align-items: center;
+			top: 118px;
+			left: 50%;
+			transform: translateX(-50%);
+		}
+		
+		&_2{
+			flex-direction: row;
+			align-items: center;
+			top: 250px;
+			right: 50px;
+		}
+		
+		&_3{
+			flex-direction: row;
+			align-items: center;
+			top: 400px;
+			right: 0;
+		}
+		
+		&_4 {
+			flex-direction: row;
+			align-items: center;
+			bottom: 250px;
+			right: 50px;
+		}
+		
+		&_5 {
+			bottom: 110px;
+			left: 50%;
+			transform: translateX(-50%);
+			flex-direction: column;
+			align-items: center;
+		}
+		
+		&_6{
+			bottom: 250px;
+			left: 50px;
+			flex-direction: row-reverse;
+			align-items: center;
+		}
+	
+		&_7{
+			top: 400px;
+			left: 0;
+			flex-direction: row-reverse;
+			align-items: center;
+		}
+		
+		&_8{
+			top: 250px;
+			left: 50px;
+			flex-direction: row-reverse;
+			align-items: center;
+		}
+	}
+	
+	&__icon{
+		width: 90px;
+		height: 90px;
+		
+		
+		&_1{
+			margin-top: 20px;
+		}
+		
+		&_2{
+			margin-right: 20px;
+		}
+		
+		&_3{
+			margin-right: 20px;
+		}
+		
+		&_4{
+			margin-right: 20px;
+		}
+		
+		&_5{
+			margin-bottom: 20px;
+		}
+		
+		&_6{
+			margin-left: 20px;
+		}
+		
+		&_7{
+			margin-left: 20px;
+		}
+		
+		&_8{
+			margin-left: 20px;
+		}
+	}
+	
+	&__img{
+		display: block;
+		width: 100%;
+	}
+	
+	&__text{
+		font-weight: 500;
+		font-size: 14px;
+		letter-spacing: 0.02em;
+		line-height: 1.3em;
+		color: #015A62;
+		width: 300px;
+	}
+}
+
+.rooms{
+	padding: 10px 0;
+	
+	&__container{
+		.container();
+	}
+	
+	&__title{
+		margin-bottom: 50px;
+		font-weight: 500;
+		font-size: 24px;
+		text-align: center;
+		
+		color: #015A62;
+	}
+	
+	&__item{
+		padding: 0 20px;
+	}
+	
+	&__main-slider{
+		width: 100%;
+		
+		.slick-prev, .slick-next {
+			z-index: 20;
+			top: 130px;
+		}
+		
+		.slick-prev {
+			left: -10px;
+		}
+		
+		.slick-next {
+			right: -10px;
+		}
+		
+		.slick-prev:before, .slick-next:before {
+			color: black;
+		}
+	}
+	
+	&__inner-slider{
+		
+		.slick-prev, .slick-next {
+			z-index: 20;
+		}
+		
+		.slick-prev {
+			left: 25px;
+		}
+		
+		.slick-next {
+			right: 25px;
+		}
+		
+		.slick-prev:before, .slick-next:before {
+			color: white;
+		}
+	}
+	
+	&__img{
+		display: block;
+		max-width: 100%;
+		margin: 0 auto;
+	}
+	
+	&__item-title{
+		padding: 20px 0 10px;
+		
+		font-weight: 500;
+		font-size: 18px;
+		line-height: 1.7em;
+		text-align: center;
+		
+		color: #015A62;
+	}
+	
+	&__item-descr{
+		font-size: 14px;
+		line-height: 1.7em;
+		text-align: center;
+		
+		color: #015A62;
+	}
+	
+	&__inner-item{
+		height: 280px;
+	}
+}
+
+.transport{
+	background: url("../images/wave-2.svg") no-repeat top center / contain;
+	padding: 253px 0 150px;
+	margin-top: -100px;
+	position: relative;
+	
+	&__container{
+		.container();
+	}
+	
+	&__title{
+		font-weight: 500;
+		font-size: 24px;
+		color: #015A62;
+		margin-bottom: 30px;
+		text-align: center;
+	}
+	
+	&__list{
+		width: 100%;
+		text-align: center;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+	}
+	
+	&__item{
+		margin-top: 50px;
+		flex: 31% 0 0;
+		
+		p{
+			font-size: 16px;
+			line-height: 1.7em;
+			color: #015A62;
+		}
+	}
+	
+	&__img{
+		margin-bottom: 15px;
+		max-width: 100%;
+		
+		img{
+			max-width: 100%;
+			display: block;
+		}
+	}
+}
+
+.gallery{
+	padding: 0 0 75px;
+	
+	&__container{
+		.container();
+	}
+	
+	&__title{
+		font-weight: 500;
+		font-size: 24px;
+		text-align: center;
+		margin-bottom: 70px;
+		color: #015A62;
+	}
+	
+	&__carousel{
+		max-width: 550px;
+		margin: 0 auto;
+	}
+	
+	&__item{
+		img{
+			display: block;
+			width: 100%;
+		}
+	}
+	
+	.slick-prev, .slick-next {
+		z-index: 20;
+	}
+	
+	.slick-prev {
+		left: 25px;
+	}
+	
+	.slick-next {
+		right: 25px;
+	}
+}
+
+.footer{
+	max-width: 100%;
+	overflow: hidden;
+	
+	background: url("../images/footer-wave.svg") no-repeat top center / cover;
+	padding: 100px 0 70px;
+	
+	&__container{
+		.container();
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+	}
+	
+	&__main{
+		text-align: center;
+	}
+	
+	&__title{
+		margin-bottom: 70px;
+		font-weight: 500;
+		font-size: 24px;
+		line-height: 41px;
+		
+		color: #015A62;
+	}
+	
+	&__item{
+		a, span{
+			font-weight: 500;
+			font-size: 18px;
+			line-height: 1.5em;
+			
+			color: #015A62;
+			
+		}
+		
+		a{
+			&:hover{
+				text-decoration: underline;
+			}
+		}
+	}
+	
+	&__img{
+		max-width: 33%;
+		
+		&-1{
+			display: block;
+			max-width: 450px;
+		}
+		
+		&-2{
+			display: block;
+			max-width: 285px;
+		}
+	}
+	
+}
+
