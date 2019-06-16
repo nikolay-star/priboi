@@ -1,4 +1,3 @@
-
 @import "_clear";
 
 // FONTS
@@ -18,7 +17,7 @@ body{
 
 // mixins
 
-@mobile: ~"(max-width: 768px)";
+@mobile: ~"(max-width: 999px)";
 @tablet: ~"(max-width: 1210px)";
 
 .container{
@@ -68,6 +67,10 @@ body{
 		.container();
 		.flex-row();
 		flex-wrap: nowrap;
+		
+		@media @mobile{
+			padding-right: 0;
+		}
 	}
 }
 
@@ -79,6 +82,10 @@ body{
 	&__img{
 		display: block;
 		width: 100%;
+	}
+	
+	@media @mobile{
+		margin-right: 15px;
 	}
 }
 
@@ -113,10 +120,19 @@ body{
 	background: url("../images/bg.png") no-repeat top center;
 	min-height: 911px;
 	
+	@media @mobile{
+		min-height: 500px;
+		background: url("../images/bg-mobile.jpg") no-repeat center / cover;
+	}
+	
 	&__container{
 		.container();
 		
 		padding-top: 268px;
+		
+		@media @mobile{
+			padding-top: 150px;
+		}
 	}
 	
 	&__title{
@@ -125,6 +141,12 @@ body{
 		line-height: 55px;
 		color: #FFFFFF;
 		margin-bottom: 20px;
+		
+		@media @mobile{
+			font-size: 30px;
+			line-height: 38px;
+			text-align: center;
+		}
 	}
 	
 	&__sale{
@@ -135,6 +157,11 @@ body{
 		color: #FFF301;
 		padding: 20px;
 		margin-bottom: 20px;
+		
+		@media @mobile{
+			font-size: 20px;
+			text-align: center;
+		}
 	}
 	
 	&__btn{
@@ -157,6 +184,11 @@ body{
 		&:hover{
 			background: #fff;
 			color: #ff0000;
+		}
+		
+		@media @mobile{
+			display: block;
+			margin: 0 auto;
 		}
 	}
 }
@@ -184,11 +216,21 @@ body{
 		justify-content: space-between;
 		flex-wrap: wrap;
 		align-items: flex-start;
+		
+		@media @mobile{
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+		}
 	}
 	
 	&__item{
 		padding: 0 10px;
 		margin-bottom: 100px;
+		
+		@media @mobile{
+			margin-bottom: 40px;
+		}
 	}
 	
 	&__icon{
@@ -217,6 +259,11 @@ body{
 	background: url("../images/bg-wave.png") no-repeat top center / cover;
 	margin-top: -40px;
 	
+	@media @mobile{
+		margin-top: 0;
+		padding: 100px 0;
+	}
+	
 	&__container{
 		.container();
 		position: relative;
@@ -227,11 +274,19 @@ body{
 		align-items: center;
 		justify-content: center;
 		
+		@media @mobile{
+			height: auto;
+		}
+		
 		&:before{
 			position: absolute;
 			content: url("../images/advantages-main.svg");
 			width: 298px;
 			transform: translateX(-4%);
+			
+			@media @mobile{
+				display: none;
+			}
 		}
 	}
 	
@@ -297,6 +352,13 @@ body{
 			flex-direction: row-reverse;
 			align-items: center;
 		}
+		
+		@media @mobile{
+			position: static;
+			flex-direction: row;
+			transform: translateX(0);
+			margin-bottom: 40px;
+		}
 	}
 	
 	&__icon{
@@ -335,6 +397,10 @@ body{
 		&_8{
 			margin-left: 20px;
 		}
+		
+		@media @mobile{
+			margin: 0 20px 0 0;
+		}
 	}
 	
 	&__img{
@@ -349,6 +415,19 @@ body{
 		line-height: 1.3em;
 		color: #015A62;
 		width: 300px;
+		
+		@media @tablet{
+			width: 200px;
+			font-size: 12px;
+			line-height: 1.2em;
+			
+		}
+		
+		@media @mobile{
+			width: 200px;
+			font-size: 14px;
+			line-height: 1.3em;
+		}
 	}
 }
 
@@ -448,6 +527,11 @@ body{
 	margin-top: -100px;
 	position: relative;
 	
+	@media @mobile{
+		background-size: cover;
+		padding-top: 150px;
+	}
+	
 	&__container{
 		.container();
 	}
@@ -466,6 +550,11 @@ body{
 		display: flex;
 		flex-direction: row;
 		justify-content: space-between;
+		
+		@media @mobile{
+			flex-direction: column;
+			justify-content: center;
+		}
 	}
 	
 	&__item{
@@ -580,11 +669,19 @@ body{
 		&-1{
 			display: block;
 			max-width: 450px;
+			
+			@media @mobile{
+				display: none;
+			}
 		}
 		
 		&-2{
 			display: block;
 			max-width: 285px;
+			
+			@media @mobile{
+				display: none;
+			}
 		}
 	}
 	
